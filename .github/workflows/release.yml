@@ -1,0 +1,12 @@
+name: release
+on:
+  workflow_dispatch: {}
+  push:
+    tags:
+      - '*'
+
+jobs:
+  create-release:
+    uses: mih-kopylov/workflows/.github/workflows/release.yml@master
+    with:
+      docker: true
