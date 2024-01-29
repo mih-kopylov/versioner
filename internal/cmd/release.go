@@ -13,13 +13,12 @@ func NewReleaseCommand(parent *cobra.Command, config *app.Config) *cobra.Command
 		Short: "Removes suffix from the version, if any",
 		Long: `Removes suffix from the version, if any.
 
-For the snapshot version 1.2.3-SNAPSTHOT:
+For the snapshot version 1.2.3-SNAPSHOT:
 - versioner release -- changes version to 1.2.3
 
 For the release version 1.2.3:
 - versioner release -- doesn't change anything, just return 1.2.3
 `,
-		Args: cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			currentVersion, err := fileops.GetVersion(config)
 			if err != nil {

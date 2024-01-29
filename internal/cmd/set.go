@@ -14,7 +14,6 @@ func NewSetCmd(parent *cobra.Command, config *app.Config) *cobra.Command {
 		Long: `Set version to the specified value.
 
 versioner set 1.2.3-SNAPSHOT -- changes the current version to 1.2.3-SNAPSHOT`,
-		Args: cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			nextVersion := args[0]
 			err := versionops.Verify(nextVersion)
