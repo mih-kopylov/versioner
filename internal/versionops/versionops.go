@@ -102,7 +102,7 @@ func SuffixSnapshot(version string, suffix string) (string, error) {
 }
 
 func RemoveMinor(version string) (string, error) {
-	reg, err := regexp.Compile("(\\d+)(\\.\\d+\\.\\d+)(-.+)?")
+	reg, err := regexp.Compile(`(\d+)(\.\d+\.\d+)(-.+)?`)
 	if err != nil {
 		return "", err
 	}
@@ -112,7 +112,7 @@ func RemoveMinor(version string) (string, error) {
 }
 
 func RemovePatch(version string) (string, error) {
-	reg, err := regexp.Compile("(\\d+\\.\\d+)(\\.\\d+)(-.+)?")
+	reg, err := regexp.Compile(`(\d+\.\d+)(\.\d+)(-.+)?`)
 	if err != nil {
 		return "", err
 	}

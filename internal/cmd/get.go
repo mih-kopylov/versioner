@@ -41,6 +41,10 @@ Optional suffix is kept in both cases.
 					return s, nil
 				},
 			)
+			if err != nil {
+				return err
+			}
+
 			if releaseOnly {
 				result, err = versionops.Release(result)
 				if err != nil {
