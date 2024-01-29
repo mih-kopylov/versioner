@@ -16,7 +16,7 @@ func NewGetCmd(parent *cobra.Command, config *app.Config) *cobra.Command {
 		Short: "Print current version",
 		Long: `Print current version.
 
-For the current version 1.2.3-SNAPSTHOT:
+For the current version 1.2.3-SNAPSHOT:
 - versioner get major           -- prints 1-SNAPSHOT
 - versioner get major --release -- prints 1
 - versioner get minor           -- prints 1.2-SNAPSHOT

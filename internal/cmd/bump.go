@@ -13,7 +13,7 @@ func NewBumpCommand(parent *cobra.Command, config *app.Config) *cobra.Command {
 		Short: "Bump the specified version component",
 		Long: `Bump the specified version component.
 
-For the current version 1.2.3-SNAPSTHOT:
+For the current version 1.2.3-SNAPSHOT:
 - versioner bump major -- changes version to 2.0.0-SNAPSHOT
 - versioner bump minor -- changes version to 1.3.0-SNAPSHOT
 - versioner bump patch -- changes version to 1.2.4-SNAPSHOT
