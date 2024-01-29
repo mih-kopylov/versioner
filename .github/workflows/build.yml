@@ -1,0 +1,16 @@
+name: build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - "**"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    uses: mih-kopylov/workflows/.github/workflows/build.yml@master
+    with:
+      docker: true
