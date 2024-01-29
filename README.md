@@ -6,6 +6,12 @@ Sometimes there are more than 1 file that store the same version.
 
 This tool helps to manage version and cut a release in such cases.
 
+[![Release](https://img.shields.io/github/v/release/mih-kopylov/versioner?style=for-the-badge)](https://github.com/mih-kopylov/versioner/releases/latest)
+[![GitHub license](https://img.shields.io/github/license/mih-kopylov/versioner?style=for-the-badge)](https://github.com/mih-kopylov/versioner/blob/master/LICENSE)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mih-kopylov/versioner/build.yml?style=for-the-badge)](https://github.com/mih-kopylov/versioner/actions/workflows/build.yml)
+[![Go Doc](https://img.shields.io/badge/godoc-reference-blue.svg?style=for-the-badge)](http://godoc.org/github.com/mih-kopylov/versioner)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mih-kopylov/versioner?style=for-the-badge)](https://goreportcard.com/report/github.com/mih-kopylov/versioner)
+
 ## Usage
 
 ### Operations
