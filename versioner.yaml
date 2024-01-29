@@ -1,0 +1,4 @@
+files:
+  - name: app.yaml
+    path: $.version
+debug: true
