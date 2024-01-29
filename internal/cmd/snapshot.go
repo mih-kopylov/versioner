@@ -16,8 +16,9 @@ Opposite to "release" command, puts the suffix back to the version.
 
 For the snapshot version 1.2.3:
 - versioner release -- changes version to 1.2.3-SNAPSHOT
+
 For the release version 1.2.3-SNAPSHOT:
-- versioner release -- doesn't change anything, just return 1.2.3-SNAPSHOT
+- versioner release -- doesn't change anything, just returns 1.2.3-SNAPSHOT
 `,
 		Args: cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {

@@ -15,6 +15,7 @@ func NewReleaseCommand(parent *cobra.Command, config *app.Config) *cobra.Command
 
 For the snapshot version 1.2.3-SNAPSTHOT:
 - versioner release -- changes version to 1.2.3
+
 For the release version 1.2.3:
 - versioner release -- doesn't change anything, just return 1.2.3
 `,
