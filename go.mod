@@ -1,6 +1,6 @@
 module github.com/mih-kopylov/versioner
 
-go 1.21
+go 1.23
 
 require (
 	github.com/buger/jsonparser v1.1.1
