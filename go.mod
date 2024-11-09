@@ -6,7 +6,7 @@ require (
 	github.com/buger/jsonparser v1.1.1
 	github.com/coreos/go-semver v0.3.1
 	github.com/goccy/go-yaml v1.13.6
-	github.com/joomcode/errorx v1.1.1
+	github.com/joomcode/errorx v1.2.0
 	github.com/knadh/koanf/parsers/yaml v0.1.0
 	github.com/knadh/koanf/providers/confmap v0.1.0
 	github.com/knadh/koanf/providers/env v1.0.0
