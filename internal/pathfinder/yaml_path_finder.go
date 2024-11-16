@@ -36,17 +36,17 @@ func (f YamlPathFinder) Find(content string, parts []string) (*Result, error) {
 	if specificNode, ok := node.(*ast.IntegerNode); ok {
 		offset := specificNode.Token.Position.Offset - 1
 		value := specificNode.Token.Value
-		return &Result{offset - len(value), offset, value}, nil
+		return &Result{offset, offset + len(value), value}, nil
 	}
 	if specificNode, ok := node.(*ast.FloatNode); ok {
 		offset := specificNode.Token.Position.Offset - 1
 		value := specificNode.Token.Value
-		return &Result{offset - len(value), offset, value}, nil
+		return &Result{offset, offset + len(value), value}, nil
 	}
 	if specificNode, ok := node.(*ast.StringNode); ok {
 		offset := specificNode.Token.Position.Offset - 1
 		value := specificNode.Token.Value
-		return &Result{offset - len(value), offset, value}, nil
+		return &Result{offset, offset + len(value), value}, nil
 	}
 	return nil, errorx.AssertionFailed.New("Unknown node type '%+v'", node)
 }
