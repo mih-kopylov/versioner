@@ -5,7 +5,7 @@ go 1.23
 require (
 	github.com/buger/jsonparser v1.1.1
 	github.com/coreos/go-semver v0.3.1
-	github.com/goccy/go-yaml v1.14.3
+	github.com/goccy/go-yaml v1.15.1
 	github.com/joomcode/errorx v1.2.0
 	github.com/knadh/koanf/parsers/yaml v0.1.0
 	github.com/knadh/koanf/providers/confmap v0.1.0
@@ -14,7 +14,7 @@ require (
 	github.com/knadh/koanf/v2 v2.1.2
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.8.1
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
