@@ -5,7 +5,7 @@ go 1.23
 require (
 	github.com/buger/jsonparser v1.1.1
 	github.com/coreos/go-semver v0.3.1
-	github.com/goccy/go-yaml v1.15.6
+	github.com/goccy/go-yaml v1.15.7
 	github.com/joomcode/errorx v1.2.0
 	github.com/knadh/koanf/parsers/yaml v0.1.0
 	github.com/knadh/koanf/providers/confmap v0.1.0
@@ -30,6 +30,6 @@ require (
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/rogpeppe/go-internal v1.11.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	golang.org/x/sys v0.27.0 // indirect
+	golang.org/x/sys v0.28.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 )
