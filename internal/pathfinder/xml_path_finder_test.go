@@ -54,6 +54,26 @@ func TestXmlWithSeveralVersions(t *testing.T) {
 	}
 }
 
+func TestXmlWithCyrillicText(t *testing.T) {
+	content := `
+<project>
+  <parent>
+    <string>Тут что-то на русском</string>
+  </parent>
+  <version>123</version>
+  <repository>
+    <version>RepositoryVersion</version>
+  </repository>
+</project>
+`
+	finder := XmlPathFinder{}
+	result, err := finder.Find(content, []string{"project", "version"})
+	if assert.NoError(t, err) {
+		assert.Equal(t, "123", result.Value)
+		assert.Equal(t, result.Value, content[result.Start:result.End])
+	}
+}
+
 func TestMalformedXml(t *testing.T) {
 	content := `
 project
