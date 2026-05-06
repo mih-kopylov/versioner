@@ -22,7 +22,7 @@ func (r RegexpVersionManager) Read() (string, error) {
 
 	reg, err := regexp.Compile(r.regexp)
 	if err != nil {
-		return "", ErrWrongRegexp.Wrap(err, r.regexp)
+		return "", ErrWrongRegexp.Wrap(err, "regexp='%v'", r.regexp)
 	}
 
 	if reg.NumSubexp() != 1 {
@@ -42,7 +42,7 @@ func (r RegexpVersionManager) Write(version string) (string, error) {
 
 	reg, err := regexp.Compile(r.regexp)
 	if err != nil {
-		return "", ErrWrongRegexp.Wrap(err, r.regexp)
+		return "", ErrWrongRegexp.Wrap(err, "regexp: '%v'", r.regexp)
 	}
 
 	if reg.NumSubexp() != 1 {

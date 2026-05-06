@@ -140,6 +140,6 @@ func HandleMode(
 	case PatchMode:
 		return patchHandler(version)
 	default:
-		return "", ErrUnknownMode.New(modeString)
+		return "", ErrUnknownMode.New("mode='%v'", modeString)
 	}
 }
