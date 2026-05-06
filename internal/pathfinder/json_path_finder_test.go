@@ -22,6 +22,23 @@ func TestSimpleJson(t *testing.T) {
 	}
 }
 
+func TestJsonWithCyrillicText(t *testing.T) {
+	content := `
+{
+  "project": {
+    "cyrillicString": "Тут что-то на русском"
+    "version": "123"
+  }
+}
+`
+	finder := JsonPathFinder{}
+	result, err := finder.Find(content, []string{"project", "version"})
+	if assert.NoError(t, err) {
+		assert.Equal(t, "123", result.Value)
+		assert.Equal(t, result.Value, content[result.Start:result.End])
+	}
+}
+
 func TestJsonNotFound(t *testing.T) {
 	content := `
 {

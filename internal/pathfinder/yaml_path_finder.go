@@ -1,6 +1,8 @@
 package pathfinder
 
 import (
+	"unicode/utf8"
+
 	"github.com/goccy/go-yaml/ast"
 	"github.com/goccy/go-yaml/lexer"
 	"github.com/goccy/go-yaml/parser"
@@ -34,21 +36,36 @@ func (f YamlPathFinder) Find(content string, parts []string) (*Result, error) {
 	}
 
 	if specificNode, ok := node.(*ast.IntegerNode); ok {
-		offset := specificNode.Token.Position.Offset - 1
 		value := specificNode.Token.Value
-		return &Result{offset, offset + len(value), value}, nil
+		byteOffset := runeOffsetToByteOffset(content, specificNode.Token.Position.Offset)
+		return &Result{byteOffset, byteOffset + len(value), value}, nil
 	}
 	if specificNode, ok := node.(*ast.FloatNode); ok {
-		offset := specificNode.Token.Position.Offset - 1
 		value := specificNode.Token.Value
-		return &Result{offset, offset + len(value), value}, nil
+		byteOffset := runeOffsetToByteOffset(content, specificNode.Token.Position.Offset)
+		return &Result{byteOffset, byteOffset + len(value), value}, nil
 	}
 	if specificNode, ok := node.(*ast.StringNode); ok {
-		offset := specificNode.Token.Position.Offset - 1
 		value := specificNode.Token.Value
-		return &Result{offset, offset + len(value), value}, nil
+		byteOffset := runeOffsetToByteOffset(content, specificNode.Token.Position.Offset)
+		return &Result{byteOffset, byteOffset + len(value), value}, nil
 	}
 	return nil, errorx.AssertionFailed.New("Unknown node type '%+v'", node)
+}
+
+// runeOffsetToByteOffset converts a rune offset to a byte offset in the content string.
+func runeOffsetToByteOffset(content string, runeOffset int) int {
+	byteOffset := 0
+	runeIndex := 0
+	for _, r := range content {
+		// Token.Position.Offset is 1-indexed (starts from 1), so we subtract 1 to get 0-indexed rune position.
+		if runeIndex >= runeOffset-1 {
+			break
+		}
+		byteOffset += utf8.RuneLen(r)
+		runeIndex++
+	}
+	return byteOffset
 }
 
 func resolveCurrentLevelMappingValueNode(node ast.Node, parts []string, partIndex int) (*ast.MappingValueNode, error) {

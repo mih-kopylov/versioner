@@ -36,6 +36,6 @@ func NewPathFinder(fileName string) (PathFinder, error) {
 	case ".xml":
 		return XmlPathFinder{}, nil
 	default:
-		return nil, ErrUnsupportedFileExtension.New(fileName)
+		return nil, ErrUnsupportedFileExtension.New("fileName='%v'", fileName)
 	}
 }

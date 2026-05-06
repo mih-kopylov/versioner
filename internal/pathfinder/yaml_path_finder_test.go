@@ -78,3 +78,20 @@ project:
 		assert.Equal(t, result.Value, content[result.Start:result.End])
 	}
 }
+
+func TestYamlWithCyrillicText(t *testing.T) {
+	content := `
+init:
+  version: Тут что-то на русском
+project:
+  version: 123
+another:
+  version: 222
+`
+	finder := YamlPathFinder{}
+	result, err := finder.Find(content, []string{"project", "version"})
+	if assert.NoError(t, err) {
+		assert.Equal(t, "123", result.Value)
+		assert.Equal(t, result.Value, content[result.Start:result.End])
+	}
+}

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Support Cyrillic characters before the target value in YAML documents
+
 ## [0.1.1] - 2024-01-29
 
 ### Fixed
